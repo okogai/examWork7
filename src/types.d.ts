@@ -4,6 +4,7 @@ export interface MenuItem {
     price: number;
     image: string;
 }
+
 export interface OrderProps {
     amount: number;
     price: number;
@@ -12,3 +13,4 @@ export interface OrderProps {
 export interface Order {
     [key: string]: OrderProps;
 }
+

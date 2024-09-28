@@ -1,0 +1,33 @@
+.order-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.order-name {
+    width: 150px;
+    text-align: start;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.order-amount {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.order-price {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.remove-btn:focus {
+    outline: none;
+}
