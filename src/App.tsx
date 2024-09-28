@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
+import OrderDetails from '../components/OrderDetails/OrderDetails.tsx';
+import MenuComponent from '../components/MenuComponent/MenuComponent.tsx'
 import cheeseburgerImage from './assets/cheeseburger.png';
 import rollImage from './assets/roll.png';
 import nuggetsImage from './assets/nuggets.png';
@@ -8,7 +10,8 @@ import milkshakeImage from './assets/milkshake.png';
 import colaImage from './assets/cola.png';
 import icecreamImage from './assets/icecream.png';
 import strawberryImage from './assets/icecream.png';
-import './App.css'
+import { MenuItem, Order } from './types';
+import './App.css';
 
 const menuItems: MenuItem[] = [
     { id: 1, name: 'Cheeseburger', price: 174, image: cheeseburgerImage},
@@ -22,12 +25,31 @@ const menuItems: MenuItem[] = [
     { id: 9, name: 'Strawberry Ice cream', price: 89, image: strawberryImage}
 ];
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+    const [order, setOrder] = useState<Order>({});
 
-  return (
+    const addItem = (item: MenuItem) => {
+        const newOrder = { ...order };
+        if (newOrder[item.name]) {
+            newOrder[item.name].amount += 1;
+        } else {
+            newOrder[item.name] = { amount: 1, price: item.price };
+        }
+        setOrder(newOrder);
+    };
 
-  )
-}
+    const removeItem = (itemName: string) => {
+        const newOrder = { ...order };
+        delete newOrder[itemName];
+        setOrder(newOrder);
+    };
 
-export default App
+    return (
+        <div className='fast-food-constructor'>
+            <OrderDetails order={order} removeItem={removeItem} />
+            <MenuComponent menuItems={menuItems} addItem={addItem} />
+        </div>
+    );
+};
+
+export default App;

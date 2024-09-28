@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.fast-food-constructor {
+  width: 1280px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
