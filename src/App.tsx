@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import OrderDetails from '../components/OrderDetails/OrderDetails.tsx';
-import MenuComponent from '../components/MenuComponent/MenuComponent.tsx'
+import OrderDetails from './components/OrderDetails/OrderDetails.tsx';
+import MenuComponent from './components/MenuComponent/MenuComponent.tsx'
 import cheeseburgerImage from './assets/cheeseburger.png';
 import rollImage from './assets/roll.png';
 import nuggetsImage from './assets/nuggets.png';

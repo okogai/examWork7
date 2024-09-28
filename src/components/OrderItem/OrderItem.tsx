@@ -1,5 +1,5 @@
 import React from 'react';
-import deleteImage from '../../src/assets/delete.svg';
+import deleteImage from '../../assets/delete.svg';
 import './OrderItem.css'
 
 interface OrderItemProps {

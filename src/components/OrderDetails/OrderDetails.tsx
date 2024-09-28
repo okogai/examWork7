@@ -1,7 +1,7 @@
 import React from 'react';
 import OrderItem from '../OrderItem/OrderItem';
 import TotalPrice from '../TotalPrice/TotalPrice';
-import {Order} from "../../src/types";
+import {Order} from '../../types';
 import './OrderDetails.css';
 
 interface OrderDetailsProps {
